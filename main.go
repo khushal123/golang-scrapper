@@ -1,7 +1,7 @@
 package main
 
 import (
-	"crawler/crawler"
+	"crawler/machine"
 	"flag"
 	"fmt"
 	"log"
@@ -11,7 +11,7 @@ import (
 // that are targeting the current web page, either via an absolute url like http://mysite.com/mypath or by a relative url like /mypath
 // and returns a sorted list of absolute urls  (eg: []string{"http://mysite.com/1","http://mysite.com/2"})
 func CrawlWebpage(rootURL string, maxDepth int) ([]string, error) {
-	links, err := crawler.RunCrawler(rootURL, maxDepth)
+	links, err := machine.RunCrawler(rootURL, maxDepth)
 	if err != nil {
 		return nil, err
 	}
